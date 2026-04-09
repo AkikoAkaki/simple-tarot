@@ -1,0 +1,1245 @@
+[
+  {
+    "id": "major_0",
+    "name": "愚者",
+    "arcana": "大阿尔卡纳",
+    "number": 0,
+    "roman": "0",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "智慧",
+      "热情",
+      "直觉"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_1",
+    "name": "魔术师",
+    "arcana": "大阿尔卡纳",
+    "number": 1,
+    "roman": "I",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "转变",
+      "结合",
+      "重生"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_2",
+    "name": "女祭司",
+    "arcana": "大阿尔卡纳",
+    "number": 2,
+    "roman": "II",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "转变",
+      "创造",
+      "牺牲"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_3",
+    "name": "女皇",
+    "arcana": "大阿尔卡纳",
+    "number": 3,
+    "roman": "III",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "不安",
+      "公正",
+      "耐心"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_4",
+    "name": "皇帝",
+    "arcana": "大阿尔卡纳",
+    "number": 4,
+    "roman": "IV",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "智慧",
+      "突变",
+      "直觉"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_5",
+    "name": "教皇",
+    "arcana": "大阿尔卡纳",
+    "number": 5,
+    "roman": "V",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "内省",
+      "结合",
+      "行动"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_6",
+    "name": "恋人",
+    "arcana": "大阿尔卡纳",
+    "number": 6,
+    "roman": "VI",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "直觉",
+      "束缚",
+      "耐心"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_7",
+    "name": "战车",
+    "arcana": "大阿尔卡纳",
+    "number": 7,
+    "roman": "VII",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "智慧",
+      "不安",
+      "重生"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_8",
+    "name": "力量",
+    "arcana": "大阿尔卡纳",
+    "number": 8,
+    "roman": "VIII",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "直觉",
+      "爱",
+      "耐心"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_9",
+    "name": "隐士",
+    "arcana": "大阿尔卡纳",
+    "number": 9,
+    "roman": "IX",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "突变",
+      "悲痛",
+      "丰收"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_10",
+    "name": "命运之轮",
+    "arcana": "大阿尔卡纳",
+    "number": 10,
+    "roman": "X",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "结合",
+      "耐心",
+      "完满"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_11",
+    "name": "正义",
+    "arcana": "大阿尔卡纳",
+    "number": 11,
+    "roman": "XI",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "秩序",
+      "转折"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_12",
+    "name": "倒吊人",
+    "arcana": "大阿尔卡纳",
+    "number": 12,
+    "roman": "XII",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "直觉",
+      "智慧",
+      "财富"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_13",
+    "name": "死神",
+    "arcana": "大阿尔卡纳",
+    "number": 13,
+    "roman": "XIII",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "热情",
+      "悲痛",
+      "秩序"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_14",
+    "name": "节制",
+    "arcana": "大阿尔卡纳",
+    "number": 14,
+    "roman": "XIV",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "阻碍",
+      "牺牲"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_15",
+    "name": "恶魔",
+    "arcana": "大阿尔卡纳",
+    "number": 15,
+    "roman": "XV",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "胜利",
+      "成功",
+      "直觉"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_16",
+    "name": "高塔",
+    "arcana": "大阿尔卡纳",
+    "number": 16,
+    "roman": "XVI",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "胜利",
+      "转变",
+      "财富"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_17",
+    "name": "星星",
+    "arcana": "大阿尔卡纳",
+    "number": 17,
+    "roman": "XVII",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "财富",
+      "希望",
+      "悲痛"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_18",
+    "name": "月亮",
+    "arcana": "大阿尔卡纳",
+    "number": 18,
+    "roman": "XVIII",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "直觉",
+      "胜利",
+      "内省"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_19",
+    "name": "太阳",
+    "arcana": "大阿尔卡纳",
+    "number": 19,
+    "roman": "XIX",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "智慧",
+      "创造",
+      "转折"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_20",
+    "name": "审判",
+    "arcana": "大阿尔卡纳",
+    "number": 20,
+    "roman": "XX",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "财富",
+      "悲痛",
+      "转变"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "major_21",
+    "name": "世界",
+    "arcana": "大阿尔卡纳",
+    "number": 21,
+    "roman": "XXI",
+    "suit": null,
+    "element": "以太",
+    "keywords": [
+      "希望",
+      "耐心",
+      "突变"
+    ],
+    "upright": "正位释义：预示着新的开始、可能性和自发的行动。",
+    "reversed": "逆位释义：暗示着冲动、鲁莽或者被阻滞的能量。"
+  },
+  {
+    "id": "minor_权杖_1",
+    "name": "权杖王牌",
+    "arcana": "小阿尔卡纳",
+    "number": 1,
+    "roman": "I",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "不安",
+      "秩序",
+      "创造"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_2",
+    "name": "权杖二",
+    "arcana": "小阿尔卡纳",
+    "number": 2,
+    "roman": "II",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "胜利",
+      "行动",
+      "直觉"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_3",
+    "name": "权杖三",
+    "arcana": "小阿尔卡纳",
+    "number": 3,
+    "roman": "III",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "爱",
+      "转变",
+      "牺牲"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_4",
+    "name": "权杖四",
+    "arcana": "小阿尔卡纳",
+    "number": 4,
+    "roman": "IV",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "直觉",
+      "转折",
+      "内省"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_5",
+    "name": "权杖五",
+    "arcana": "小阿尔卡纳",
+    "number": 5,
+    "roman": "V",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "热情",
+      "突变",
+      "和谐"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_6",
+    "name": "权杖六",
+    "arcana": "小阿尔卡纳",
+    "number": 6,
+    "roman": "VI",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "阻碍",
+      "转变",
+      "不安"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_7",
+    "name": "权杖七",
+    "arcana": "小阿尔卡纳",
+    "number": 7,
+    "roman": "VII",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "牺牲",
+      "转变",
+      "内省"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_8",
+    "name": "权杖八",
+    "arcana": "小阿尔卡纳",
+    "number": 8,
+    "roman": "VIII",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "转变",
+      "爱"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_9",
+    "name": "权杖九",
+    "arcana": "小阿尔卡纳",
+    "number": 9,
+    "roman": "IX",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "希望",
+      "转折",
+      "创造"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_10",
+    "name": "权杖十",
+    "arcana": "小阿尔卡纳",
+    "number": 10,
+    "roman": "X",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "秩序",
+      "和谐",
+      "牺牲"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_11",
+    "name": "权杖侍从",
+    "arcana": "小阿尔卡纳",
+    "number": 11,
+    "roman": "XI",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "完满",
+      "转变",
+      "悲痛"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_12",
+    "name": "权杖骑士",
+    "arcana": "小阿尔卡纳",
+    "number": 12,
+    "roman": "XII",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "束缚",
+      "悲痛",
+      "爱"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_13",
+    "name": "权杖王后",
+    "arcana": "小阿尔卡纳",
+    "number": 13,
+    "roman": "XIII",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "胜利",
+      "牺牲",
+      "直觉"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_权杖_14",
+    "name": "权杖国王",
+    "arcana": "小阿尔卡纳",
+    "number": 14,
+    "roman": "XIV",
+    "suit": "权杖",
+    "element": "火",
+    "keywords": [
+      "悲痛",
+      "阻碍",
+      "内省"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_1",
+    "name": "圣杯王牌",
+    "arcana": "小阿尔卡纳",
+    "number": 1,
+    "roman": "I",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "稳定",
+      "爱",
+      "秩序"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_2",
+    "name": "圣杯二",
+    "arcana": "小阿尔卡纳",
+    "number": 2,
+    "roman": "II",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "突变",
+      "热情",
+      "结合"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_3",
+    "name": "圣杯三",
+    "arcana": "小阿尔卡纳",
+    "number": 3,
+    "roman": "III",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "热情",
+      "创造",
+      "突变"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_4",
+    "name": "圣杯四",
+    "arcana": "小阿尔卡纳",
+    "number": 4,
+    "roman": "IV",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "完满",
+      "秩序",
+      "内省"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_5",
+    "name": "圣杯五",
+    "arcana": "小阿尔卡纳",
+    "number": 5,
+    "roman": "V",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "转折",
+      "悲痛",
+      "热情"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_6",
+    "name": "圣杯六",
+    "arcana": "小阿尔卡纳",
+    "number": 6,
+    "roman": "VI",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "转折",
+      "内省",
+      "悲痛"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_7",
+    "name": "圣杯七",
+    "arcana": "小阿尔卡纳",
+    "number": 7,
+    "roman": "VII",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "束缚",
+      "直觉",
+      "成功"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_8",
+    "name": "圣杯八",
+    "arcana": "小阿尔卡纳",
+    "number": 8,
+    "roman": "VIII",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "胜利",
+      "行动",
+      "爱"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_9",
+    "name": "圣杯九",
+    "arcana": "小阿尔卡纳",
+    "number": 9,
+    "roman": "IX",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "阻碍",
+      "爱",
+      "智慧"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_10",
+    "name": "圣杯十",
+    "arcana": "小阿尔卡纳",
+    "number": 10,
+    "roman": "X",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "牺牲",
+      "阻碍",
+      "转折"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_11",
+    "name": "圣杯侍从",
+    "arcana": "小阿尔卡纳",
+    "number": 11,
+    "roman": "XI",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "完满",
+      "丰收",
+      "牺牲"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_12",
+    "name": "圣杯骑士",
+    "arcana": "小阿尔卡纳",
+    "number": 12,
+    "roman": "XII",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "希望",
+      "创造",
+      "牺牲"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_13",
+    "name": "圣杯王后",
+    "arcana": "小阿尔卡纳",
+    "number": 13,
+    "roman": "XIII",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "悲痛",
+      "不安",
+      "牺牲"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_圣杯_14",
+    "name": "圣杯国王",
+    "arcana": "小阿尔卡纳",
+    "number": 14,
+    "roman": "XIV",
+    "suit": "圣杯",
+    "element": "水",
+    "keywords": [
+      "束缚",
+      "行动"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_1",
+    "name": "宝剑王牌",
+    "arcana": "小阿尔卡纳",
+    "number": 1,
+    "roman": "I",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "转变",
+      "完满",
+      "突变"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_2",
+    "name": "宝剑二",
+    "arcana": "小阿尔卡纳",
+    "number": 2,
+    "roman": "II",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "重生",
+      "转折",
+      "结合"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_3",
+    "name": "宝剑三",
+    "arcana": "小阿尔卡纳",
+    "number": 3,
+    "roman": "III",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "完满",
+      "内省",
+      "结合"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_4",
+    "name": "宝剑四",
+    "arcana": "小阿尔卡纳",
+    "number": 4,
+    "roman": "IV",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "悲痛",
+      "创造",
+      "秩序"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_5",
+    "name": "宝剑五",
+    "arcana": "小阿尔卡纳",
+    "number": 5,
+    "roman": "V",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "不安",
+      "耐心",
+      "结合"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_6",
+    "name": "宝剑六",
+    "arcana": "小阿尔卡纳",
+    "number": 6,
+    "roman": "VI",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "悲痛",
+      "希望",
+      "财富"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_7",
+    "name": "宝剑七",
+    "arcana": "小阿尔卡纳",
+    "number": 7,
+    "roman": "VII",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "爱",
+      "丰收",
+      "不安"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_8",
+    "name": "宝剑八",
+    "arcana": "小阿尔卡纳",
+    "number": 8,
+    "roman": "VIII",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "成功",
+      "智慧",
+      "行动"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_9",
+    "name": "宝剑九",
+    "arcana": "小阿尔卡纳",
+    "number": 9,
+    "roman": "IX",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "秩序",
+      "转折",
+      "内省"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_10",
+    "name": "宝剑十",
+    "arcana": "小阿尔卡纳",
+    "number": 10,
+    "roman": "X",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "创造",
+      "不安"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_11",
+    "name": "宝剑侍从",
+    "arcana": "小阿尔卡纳",
+    "number": 11,
+    "roman": "XI",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "耐心",
+      "希望",
+      "公正"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_12",
+    "name": "宝剑骑士",
+    "arcana": "小阿尔卡纳",
+    "number": 12,
+    "roman": "XII",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "胜利",
+      "直觉",
+      "公正"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_13",
+    "name": "宝剑王后",
+    "arcana": "小阿尔卡纳",
+    "number": 13,
+    "roman": "XIII",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "不安",
+      "转折",
+      "秩序"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_宝剑_14",
+    "name": "宝剑国王",
+    "arcana": "小阿尔卡纳",
+    "number": 14,
+    "roman": "XIV",
+    "suit": "宝剑",
+    "element": "风",
+    "keywords": [
+      "内省",
+      "转折",
+      "完满"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_1",
+    "name": "星币王牌",
+    "arcana": "小阿尔卡纳",
+    "number": 1,
+    "roman": "I",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "智慧",
+      "耐心",
+      "稳定"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_2",
+    "name": "星币二",
+    "arcana": "小阿尔卡纳",
+    "number": 2,
+    "roman": "II",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "智慧",
+      "财富",
+      "不安"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_3",
+    "name": "星币三",
+    "arcana": "小阿尔卡纳",
+    "number": 3,
+    "roman": "III",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "爱",
+      "稳定",
+      "转变"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_4",
+    "name": "星币四",
+    "arcana": "小阿尔卡纳",
+    "number": 4,
+    "roman": "IV",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "胜利",
+      "丰收",
+      "公正"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_5",
+    "name": "星币五",
+    "arcana": "小阿尔卡纳",
+    "number": 5,
+    "roman": "V",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "不安",
+      "胜利",
+      "转折"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_6",
+    "name": "星币六",
+    "arcana": "小阿尔卡纳",
+    "number": 6,
+    "roman": "VI",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "转折",
+      "热情",
+      "爱"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_7",
+    "name": "星币七",
+    "arcana": "小阿尔卡纳",
+    "number": 7,
+    "roman": "VII",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "结合",
+      "突变",
+      "行动"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_8",
+    "name": "星币八",
+    "arcana": "小阿尔卡纳",
+    "number": 8,
+    "roman": "VIII",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "重生",
+      "热情",
+      "爱"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_9",
+    "name": "星币九",
+    "arcana": "小阿尔卡纳",
+    "number": 9,
+    "roman": "IX",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "公正",
+      "胜利",
+      "直觉"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_10",
+    "name": "星币十",
+    "arcana": "小阿尔卡纳",
+    "number": 10,
+    "roman": "X",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "和谐",
+      "结合",
+      "束缚"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_11",
+    "name": "星币侍从",
+    "arcana": "小阿尔卡纳",
+    "number": 11,
+    "roman": "XI",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "行动",
+      "束缚",
+      "创造"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_12",
+    "name": "星币骑士",
+    "arcana": "小阿尔卡纳",
+    "number": 12,
+    "roman": "XII",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "行动",
+      "结合",
+      "希望"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_13",
+    "name": "星币王后",
+    "arcana": "小阿尔卡纳",
+    "number": 13,
+    "roman": "XIII",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "和谐",
+      "牺牲",
+      "成功"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  },
+  {
+    "id": "minor_星币_14",
+    "name": "星币国王",
+    "arcana": "小阿尔卡纳",
+    "number": 14,
+    "roman": "XIV",
+    "suit": "星币",
+    "element": "土",
+    "keywords": [
+      "智慧",
+      "转变",
+      "悲痛"
+    ],
+    "upright": "正位释义：事情按预期发展，力量平稳展开。",
+    "reversed": "逆位释义：事情可能遇到延迟，或需要重新评估。"
+  }
+]

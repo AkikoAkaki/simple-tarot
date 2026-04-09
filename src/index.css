@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Geist', 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --color-bg-base: #111113;
+  --color-bg-surface: #1a1a1e;
+  --color-bg-elevated: #232328;
+  --color-border: rgba(255,255,255,0.07);
+  --color-border-hover: rgba(255,255,255,0.13);
+  --color-text-primary: #f0eeeb;
+  --color-text-secondary: rgba(240,238,235,0.45);
+  --color-text-muted: rgba(240,238,235,0.22);
+  --color-accent: #c8b8a2;
+}
+
+:root {
+  --bg-base: #111113;
+  --bg-surface: #1a1a1e;
+  --bg-elevated: #232328;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.13);
+  --text-primary: #f0eeeb;
+  --text-secondary: rgba(240,238,235,0.45);
+  --text-muted: rgba(240,238,235,0.22);
+  --accent: #c8b8a2;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  min-height: 100vh;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  /* SVG noise texture */
+  background-image: url('/noise.svg');
+  z-index: 9999;
+}
+
+/* Base Typographic Rules from User */
+h1, h2, h3, h4, h5, h6, .font-light-title {
+  font-weight: 300;
+}
+p, span, div, .font-normal-body {
+  font-weight: 400;
+}
+
+/* Utility classes for text opacity levels */
+.text-level-primary {
+  color: var(--text-primary);
+}
+.text-level-secondary {
+  color: var(--text-secondary);
+}
+.text-level-muted {
+  color: var(--text-muted);
+}
+
+.label-small {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+.tarot-border {
+  border: 1px solid var(--border);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tarot-border:hover {
+  border-color: var(--border-hover);
+}
