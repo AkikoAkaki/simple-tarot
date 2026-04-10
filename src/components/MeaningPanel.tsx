@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { TarotCardData } from '../types';
 
 export interface MeaningPanelProps {
@@ -8,8 +8,8 @@ export interface MeaningPanelProps {
 export default function MeaningPanel({ card }: MeaningPanelProps) {
   if (!card) {
     return (
-      <div className="flex-1 flex items-center justify-center text-level-muted font-light-title">
-        请抽牌或选择卡片以查看释义
+      <div className="h-full flex items-center justify-center text-level-muted font-light-title p-10 text-center">
+        当命运的轮盘转动<br/>在此处解读它的指引
       </div>
     );
   }
@@ -17,51 +17,97 @@ export default function MeaningPanel({ card }: MeaningPanelProps) {
   const { isReversed } = card;
 
   return (
-    <div className="relative flex-1 p-8 md:p-12 overflow-hidden flex flex-col justify-center min-h-[400px]">
+    <div className="relative p-8 md:p-12 lg:px-14 min-h-full">
       {/* Background Watermark */}
       <div 
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[12rem] md:text-[20rem] font-light-title pointer-events-none select-none"
+        className="absolute top-10 right-10 text-[10rem] font-light-title pointer-events-none select-none overflow-hidden"
         style={{ 
           color: 'var(--text-muted)', 
-          opacity: 0.1 
+          opacity: 0.05,
+          lineHeight: 0.8
         }}
       >
         {card.roman || card.number}
       </div>
 
-      <motion.div 
-        key={card.id + (isReversed ? '-rev' : '-up')} // 触发进场动画
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 max-w-2xl mx-auto w-full"
-      >
-        <div className="flex items-center gap-4 mb-4">
-          <span className="label-small text-level-muted">{card.arcana}</span>
-          {card.element && (
-            <span className="label-small text-level-muted">{card.element}</span>
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={card.id + (isReversed ? '-rev' : '-up')} 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 w-full pb-20"
+        >
+          {/* Header section */}
+          <div className="mb-10">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="label-small text-level-muted">{card.arcana}</span>
+              {card.element && (
+                <span className="label-small text-[var(--accent)]">{card.element}</span>
+              )}
+              <span className={`label-small ${isReversed ? 'text-purple-400/70' : 'text-level-secondary'}`}>
+                {isReversed ? '逆位' : '正位'}
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-light-title text-level-primary tracking-wide">
+              {card.name}
+            </h2>
+          </div>
+
+          {/* Keywords */}
+          {card.keywords && card.keywords.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-8 border-b border-[var(--border)] pb-8">
+              {card.keywords.map((kw, i) => (
+                <span key={i} className="px-4 py-1.5 bg-[var(--bg-elevated)] border border-[var(--border)] rounded-full text-level-secondary text-sm">
+                  {kw}
+                </span>
+              ))}
+            </div>
           )}
-          <span className="label-small text-[var(--accent)]">{isReversed ? '逆位' : '正位'}</span>
-        </div>
 
-        <h2 className="text-4xl md:text-5xl font-light-title text-level-primary mb-6">
-          {card.name}
-        </h2>
+          {/* Story / Description */}
+          {card.description && (
+            <div className="mb-10 text-level-secondary text-base leading-relaxed italic border-l-2 border-[var(--border-hover)] pl-6">
+              {card.description}
+            </div>
+          )}
 
-        <div className="flex flex-wrap gap-2 mb-8">
-          {card.keywords && card.keywords.map((kw, i) => (
-            <span key={i} className="px-3 py-1 border border-[var(--border)] rounded-full text-level-secondary text-sm">
-              {kw}
-            </span>
-          ))}
-        </div>
+          {/* Main Meaning */}
+          <div className="space-y-6 mb-12">
+            <h3 className="text-sm label-small text-level-muted border-b border-[var(--border)] pb-2 inline-block">核心释义</h3>
+            <p className="text-[1.05rem] text-level-primary leading-loose font-normal-body whitespace-pre-wrap">
+              {isReversed ? card.reversed : card.upright}
+            </p>
+          </div>
 
-        <div className="space-y-4">
-          <p className="text-lg text-level-primary leading-relaxed font-normal-body">
-            {isReversed ? card.reversed : card.upright}
-          </p>
-        </div>
-      </motion.div>
+          {/* Advice */}
+          {card.advice && (
+            <div className="mb-10 bg-[var(--bg-elevated)]/50 p-6 rounded border border-[var(--border)]">
+              <h3 className="text-xs label-small text-[var(--accent)] mb-3">神谕指引</h3>
+              <p className="text-[0.95rem] text-level-primary leading-relaxed font-normal-body">
+                {card.advice}
+              </p>
+            </div>
+          )}
+
+          {/* Questions */}
+          {card.questions && card.questions.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-xs label-small text-level-muted mb-4">灵魂拷问</h3>
+              <ul className="space-y-4">
+                {card.questions.map((q, i) => (
+                  <li key={i} className="flex gap-3 text-level-secondary text-[0.95rem]">
+                    <span className="text-[var(--accent)] opacity-50">✦</span>
+                    <span className="leading-relaxed">{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

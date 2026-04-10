@@ -7,6 +7,9 @@ export interface TarotCardData {
   suit: string | null;
   element: string;
   keywords: string[];
+  description?: string;
+  advice?: string;
+  questions?: string[];
   upright: string;
   reversed: string;
   isReversed?: boolean;
