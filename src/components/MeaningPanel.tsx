@@ -22,10 +22,11 @@ export default function MeaningPanel({ card, onClose }: MeaningPanelProps) {
       {onClose && (
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 lg:hidden w-8 h-8 flex items-center justify-center rounded-full bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-white transition-colors z-50 border border-[var(--border)]"
+          className="absolute top-6 right-6 lg:hidden w-11 h-11 flex items-center justify-center rounded-full bg-[var(--bg-elevated)]/80 backdrop-blur-md text-[var(--text-secondary)] hover:text-white transition-colors z-50 border border-[var(--border)] active:scale-90"
+          aria-label="关闭详情"
         >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
       )}

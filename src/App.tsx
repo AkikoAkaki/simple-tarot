@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Drawer } from 'vaul';
 import { useDeck } from './hooks/useDeck';
 import ShuffleDeck from './components/ShuffleDeck';
@@ -36,25 +37,44 @@ function App() {
     setIsMobilePanelOpen(true);
   };
 
+  const spreadKeys = Object.keys(spreads);
+  const currentSpreadIndex = spreadKeys.findIndex(k => spreads[k].name === spread.name);
+
+  const handleNextSpread = () => {
+    const nextIndex = (currentSpreadIndex + 1) % spreadKeys.length;
+    const nextKey = spreadKeys[nextIndex];
+    changeSpread(nextKey);
+    setSelectedCard(null);
+    setIsMobilePanelOpen(false);
+  };
+
+  const handlePrevSpread = () => {
+    const prevIndex = (currentSpreadIndex - 1 + spreadKeys.length) % spreadKeys.length;
+    const prevKey = spreadKeys[prevIndex];
+    changeSpread(prevKey);
+    setSelectedCard(null);
+    setIsMobilePanelOpen(false);
+  };
+
   const handleChangeSpread = (key: string) => {
     changeSpread(key);
     setSelectedCard(null);
     setIsMobilePanelOpen(false);
   };
 
-  const displayCard = selectedCard ?? drawn.at(-1) ?? null;
+  const displayCard = selectedCard ?? (drawn.length > 0 ? drawn[drawn.length - 1] : null);
 
   return (
     <div className="min-h-[100svh] lg:h-[100dvh] w-full flex flex-col lg:flex-row relative bg-[var(--bg-base)] selection:bg-[var(--accent)] selection:text-black lg:overflow-hidden">
       {/* Floating Header */}
-      <header className="absolute top-0 left-0 w-full lg:w-[65%] pt-[max(1.5rem,env(safe-area-inset-top))] pb-4 px-6 md:px-10 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-none">
+      <header className="absolute top-0 left-0 w-full lg:w-[65%] pt-[max(1.5rem,env(safe-area-inset-top))] pb-4 px-6 md:px-10 z-50 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 pointer-events-none">
         <h1 className="text-2xl md:text-3xl font-light-title font-medium text-[var(--text-primary)] tracking-[0.2em] uppercase pointer-events-auto">
           TAROT
         </h1>
         
-        <div className="flex items-center gap-4 pointer-events-auto bg-[var(--bg-surface)]/90 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-[var(--border)] overflow-x-auto w-full sm:w-auto custom-scrollbar" style={{ backdropFilter: 'blur(12px)' }}>
+        <div className="flex items-center justify-center gap-4 pointer-events-auto bg-[var(--bg-surface)]/90 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-[var(--border)] overflow-x-auto w-auto max-w-full sm:w-auto custom-scrollbar" style={{ backdropFilter: 'blur(12px)' }}>
           <span className="label-small text-[var(--text-secondary)] hidden md:inline shrink-0">牌阵</span>
-          <div className="flex gap-2 shrink-0">
+          <div className="flex justify-center gap-2 shrink-0">
             {Object.entries(spreads).map(([key, config]) => (
               <button
                 key={key}
@@ -89,30 +109,55 @@ function App() {
            />
          </div>
 
-         {/* Mobile Centered Action Bar */}
-         <div className="lg:hidden fixed bottom-[max(2rem,calc(env(safe-area-inset-bottom)+0.5rem))] left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-[400px]">
+         {/* Mobile Centered Action Bar with Swipe */}
+         <motion.div 
+           className="lg:hidden fixed bottom-[max(2rem,calc(env(safe-area-inset-bottom)+0.5rem))] left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-[400px] touch-none"
+           initial={false}
+           whileTap={{ scale: 0.98 }}
+           drag="x"
+           dragConstraints={{ left: 0, right: 0 }}
+           dragElastic={0.1}
+           onDragEnd={(_, info) => {
+             const threshold = 50;
+             if (info.offset.x < -threshold) handleNextSpread();
+             if (info.offset.x > threshold) handlePrevSpread();
+           }}
+         >
            <div className="bg-[var(--bg-surface)]/80 backdrop-blur-xl border border-[var(--border)] rounded-2xl p-4 shadow-2xl flex flex-col items-center gap-3">
              <div className="flex items-center justify-between w-full">
                <button
                  onClick={handleShuffle}
-                 className="px-4 py-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors"
+                 className="px-4 py-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors pointer-events-auto"
                >
                  重新洗牌
                </button>
-               <span className="text-xs font-medium tracking-widest text-[var(--text-muted)] uppercase">
-                 剩余 {deck.length} 张
-               </span>
+               <div className="flex flex-col items-end">
+                 <span className="text-[10px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase mb-1">{spread.name}</span>
+                 <span className="text-[10px] font-medium tracking-widest text-[var(--text-muted)] uppercase">
+                   剩余 {deck.length} 张
+                 </span>
+               </div>
              </div>
              <button 
                onClick={handleDrawCard}
                disabled={deck.length === 0}
-               className="w-full py-4 bg-[var(--accent)] text-black font-semibold rounded-xl active:scale-95 transition-transform disabled:opacity-30 flex items-center justify-center gap-2"
+               className="w-full py-4 bg-[var(--accent)] text-black font-semibold rounded-xl active:scale-95 transition-transform disabled:opacity-30 flex items-center justify-center gap-2 pointer-events-auto"
              >
                <span className="text-lg">抽牌</span>
                <span className="opacity-40 font-normal">Draw</span>
              </button>
+             
+             {/* Swipe Indicator Dots */}
+             <div className="flex gap-1.5 mt-1">
+                {spreadKeys.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`h-1 rounded-full transition-all duration-300 ${i === currentSpreadIndex ? 'w-4 bg-[var(--accent)]' : 'w-1 bg-white/10'}`} 
+                  />
+                ))}
+             </div>
            </div>
-         </div>
+         </motion.div>
       </main>
 
       {/* Right Column: Editorial Meaning Panel (Desktop) */}
@@ -131,9 +176,7 @@ function App() {
       >
         <Drawer.Portal>
           <Drawer.Overlay 
-            className={`fixed inset-0 z-[60] lg:hidden transition-all duration-500 ease-in-out ${
-              snap === 0.55 ? 'bg-black/25 backdrop-blur-[1px]' : 'bg-black/60 backdrop-blur-sm'
-            }`} 
+            className="fixed inset-0 z-[60] lg:hidden bg-black/40 backdrop-blur-[2px]" 
           />
           <Drawer.Content className="fixed border-t border-[var(--border)] bottom-0 left-0 right-0 h-[100dvh] bg-[var(--bg-surface)]/95 backdrop-blur-3xl z-[60] rounded-t-[32px] flex flex-col focus:outline-none lg:hidden shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-[env(safe-area-inset-bottom)]">
             <Drawer.Handle className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-white/20 my-4" />
