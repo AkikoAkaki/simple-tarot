@@ -3,9 +3,10 @@ import { TarotCardData } from '../types';
 
 export interface MeaningPanelProps {
   card: TarotCardData | null;
+  onClose?: () => void;
 }
 
-export default function MeaningPanel({ card }: MeaningPanelProps) {
+export default function MeaningPanel({ card, onClose }: MeaningPanelProps) {
   if (!card) {
     return (
       <div className="h-full flex items-center justify-center text-level-secondary font-light-title p-10 text-center text-lg lg:text-xl tracking-wide leading-relaxed">
@@ -17,7 +18,18 @@ export default function MeaningPanel({ card }: MeaningPanelProps) {
   const { isReversed } = card;
 
   return (
-    <div className="relative p-8 md:p-12 lg:px-14 min-h-full">
+    <div className="relative p-6 pt-10 md:p-12 lg:px-14 min-h-full">
+      {/* Mobile Close Button */}
+      {onClose && (
+        <button 
+          onClick={onClose}
+          className="absolute top-6 right-6 lg:hidden w-8 h-8 flex items-center justify-center rounded-full bg-[var(--bg-elevated)] text-[var(--text-secondary)] hover:text-white transition-colors z-50 border border-[var(--border)]"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      )}
       {/* Background Watermark */}
       <div 
         className="absolute top-10 right-10 text-[10rem] font-light-title pointer-events-none select-none overflow-hidden"
@@ -37,7 +49,7 @@ export default function MeaningPanel({ card }: MeaningPanelProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full pb-20"
+          className="relative z-10 w-full pb-[max(5rem,env(safe-area-inset-bottom))]"
         >
           {/* Header section */}
           <div className="mb-10">
@@ -75,9 +87,9 @@ export default function MeaningPanel({ card }: MeaningPanelProps) {
           )}
 
           {/* Main Meaning */}
-          <div className="space-y-6 mb-12">
+          <div className="space-y-6 mb-14">
             <h3 className="text-sm label-small text-level-muted border-b border-[var(--border)] pb-2 inline-block">核心释义</h3>
-            <p className="text-[1.05rem] text-level-primary leading-loose font-normal-body whitespace-pre-wrap">
+            <p className="text-[1.1rem] md:text-[1.05rem] text-level-primary leading-loose md:leading-[2.2] font-normal-body whitespace-pre-wrap tracking-wide">
               {isReversed ? card.reversed : card.upright}
             </p>
           </div>

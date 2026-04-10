@@ -83,7 +83,7 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
     ];
 
     return (
-      <div className="relative w-full h-full min-h-[600px]">
+      <div className="relative w-full h-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
         {Array.from({ length: 10 }).map((_, i) => {
           const card = drawn[i];
           const t = transforms[i];
@@ -117,17 +117,17 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
               style={{
                 transform: `translate(calc(-50% + ${t.x}), calc(-50% + ${t.y})) rotate(${t.r}deg)`,
                 zIndex: t.z,
-                width: 'clamp(75px, 10vw, 135px)',
+                width: 'clamp(55px, 12vw, 135px)',
                 aspectRatio: '1 / 1.727'
               }}
             >
               {t.r === 0 && (
-                 <div className="absolute -top-7 md:-top-8 whitespace-nowrap label-small text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium">
+                 <div className="absolute -top-6 md:-top-8 whitespace-nowrap label-small text-[9px] sm:text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium">
                    {spreadConfig.positions[i] || `Position ${i+1}`}
                  </div>
               )}
               {t.r === -90 && (
-                 <div className="absolute -left-12 rotate-90 whitespace-nowrap label-small text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium top-1/2">
+                 <div className="absolute -left-10 sm:-left-12 rotate-90 whitespace-nowrap label-small text-[9px] sm:text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium top-1/2">
                    {spreadConfig.positions[i]}
                  </div>
               )}
