@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Drawer } from 'vaul';
 import { useDeck } from './hooks/useDeck';
 import ShuffleDeck from './components/ShuffleDeck';
 import CardSpread from './components/CardSpread';
@@ -10,22 +11,28 @@ function App() {
   const { deck, drawn, spread, shuffleDeck, drawCard, changeSpread } = useDeck();
   const [selectedCard, setSelectedCard] = useState<TarotCardData | null>(null);
   const [isMobilePanelOpen, setIsMobilePanelOpen] = useState(false);
+  const [snap, setSnap] = useState<number | string | null>(0.55);
 
-  // Initialize deck on mount
   useEffect(() => {
     shuffleDeck();
   }, [shuffleDeck]);
+
+  const handleShuffle = () => {
+    shuffleDeck();
+    setSelectedCard(null);
+    setIsMobilePanelOpen(false);
+  };
 
   const handleDrawCard = () => {
     const card = drawCard();
     if (card) {
       setSelectedCard(card);
-      setIsMobilePanelOpen(true);
     }
   };
 
   const handleSelectCard = (card: TarotCardData) => {
     setSelectedCard(card);
+    setSnap(0.55); // Snap to 55% first
     setIsMobilePanelOpen(true);
   };
 
@@ -35,8 +42,10 @@ function App() {
     setIsMobilePanelOpen(false);
   };
 
+  const displayCard = selectedCard ?? drawn.at(-1) ?? null;
+
   return (
-    <div className="min-h-[100dvh] h-[100dvh] w-full flex flex-col lg:flex-row overflow-hidden relative selection:bg-[var(--accent)] selection:text-black">
+    <div className="min-h-[100svh] lg:h-[100dvh] w-full flex flex-col lg:flex-row relative bg-[var(--bg-base)] selection:bg-[var(--accent)] selection:text-black lg:overflow-hidden">
       {/* Floating Header */}
       <header className="absolute top-0 left-0 w-full lg:w-[65%] pt-[max(1.5rem,env(safe-area-inset-top))] pb-4 px-6 md:px-10 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-none">
         <h1 className="text-2xl md:text-3xl font-light-title font-medium text-[var(--text-primary)] tracking-[0.2em] uppercase pointer-events-auto">
@@ -64,50 +73,79 @@ function App() {
       </header>
 
       {/* Left Column: Board */}
-      <main className="flex-1 w-full lg:w-[65%] relative flex items-center justify-center bg-transparent pt-[max(7rem,env(safe-area-inset-top))] pb-[max(5rem,env(safe-area-inset-bottom))] px-4 h-full shrink-0">
+      <main className="flex-1 w-full lg:w-[65%] relative flex items-center justify-center bg-transparent pt-[max(7rem,env(safe-area-inset-top))] pb-[max(8rem,env(safe-area-inset-bottom))] px-4 shrink-0">
          <CardSpread 
            drawn={drawn} 
            onSelectCard={handleSelectCard} 
            spreadConfig={spread} 
          />
          
-         {/* Floating Shuffle Deck */}
-         <div className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-4 md:bottom-10 md:left-10 z-40 transform scale-75 origin-bottom-left md:scale-100">
-           <ShuffleDeck 
-             onShuffle={() => { shuffleDeck(); setSelectedCard(null); setIsMobilePanelOpen(false); }} 
-             onDraw={handleDrawCard} 
-             remainingCount={deck.length} 
+         {/* Desktop Floating Shuffle Deck */}
+         <div className="hidden lg:block absolute bottom-10 left-10 z-40">
+           <ShuffleDeck
+             onShuffle={handleShuffle}
+             onDraw={handleDrawCard}
+             remainingCount={deck.length}
            />
+         </div>
+
+         {/* Mobile Centered Action Bar */}
+         <div className="lg:hidden fixed bottom-[max(2rem,calc(env(safe-area-inset-bottom)+0.5rem))] left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-[400px]">
+           <div className="bg-[var(--bg-surface)]/80 backdrop-blur-xl border border-[var(--border)] rounded-2xl p-4 shadow-2xl flex flex-col items-center gap-3">
+             <div className="flex items-center justify-between w-full">
+               <button
+                 onClick={handleShuffle}
+                 className="px-4 py-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors"
+               >
+                 重新洗牌
+               </button>
+               <span className="text-xs font-medium tracking-widest text-[var(--text-muted)] uppercase">
+                 剩余 {deck.length} 张
+               </span>
+             </div>
+             <button 
+               onClick={handleDrawCard}
+               disabled={deck.length === 0}
+               className="w-full py-4 bg-[var(--accent)] text-black font-semibold rounded-xl active:scale-95 transition-transform disabled:opacity-30 flex items-center justify-center gap-2"
+             >
+               <span className="text-lg">抽牌</span>
+               <span className="opacity-40 font-normal">Draw</span>
+             </button>
+           </div>
          </div>
       </main>
 
-      {/* Right Column: Editorial Meaning Panel */}
-      {/* On mobile: fixed bottom sheet styling. On desktop: standard flex column */}
-      <aside 
-        className={`w-full lg:w-[35%] lg:max-w-[600px] shrink-0 lg:h-full border-t border-[var(--border)] lg:border-t-0 lg:border-l bg-[var(--bg-surface)]/95 lg:bg-[var(--bg-surface)] overflow-y-auto custom-scrollbar absolute lg:relative z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] lg:shadow-[-10px_0_30px_rgba(0,0,0,0.3)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
-          ${isMobilePanelOpen ? 'bottom-0 h-[85dvh]' : '-bottom-full h-[85dvh] lg:bottom-auto lg:h-full'}
-          rounded-t-[32px] lg:rounded-none backdrop-blur-xl lg:backdrop-blur-none
-        `}
-      >
-        {/* Mobile handle indicator */}
-        <div 
-           className="w-full h-8 flex items-center justify-center lg:hidden sticky top-0 z-40 bg-[var(--bg-surface)]/40 backdrop-blur-sm cursor-pointer"
-           onClick={() => setIsMobilePanelOpen(!isMobilePanelOpen)}
-        >
-          <div className="w-12 h-1.5 bg-white/20 rounded-full"></div>
-        </div>
-
-        <MeaningPanel 
-          card={selectedCard || (drawn.length > 0 ? drawn[drawn.length - 1] : null)} 
-          onClose={() => setIsMobilePanelOpen(false)}
-        />
+      {/* Right Column: Editorial Meaning Panel (Desktop) */}
+      <aside className="hidden lg:block w-[35%] max-w-[600px] shrink-0 h-full border-l border-[var(--border)] bg-[var(--bg-surface)] overflow-y-auto custom-scrollbar relative z-20 shadow-[-10px_0_30px_rgba(0,0,0,0.3)]">
+        <MeaningPanel card={displayCard} />
       </aside>
 
-      {/* Overlay to dim background when mobile panel is open */}
-      <div 
-        className={`fixed inset-0 bg-black/60 z-40 lg:hidden transition-opacity duration-500 pointer-events-auto ${isMobilePanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        onClick={() => setIsMobilePanelOpen(false)}
-      ></div>
+      {/* Mobile Drawer (Vaul) */}
+      <Drawer.Root 
+        open={isMobilePanelOpen} 
+        onOpenChange={setIsMobilePanelOpen}
+        snapPoints={[0.55, 1]}
+        activeSnapPoint={snap}
+        setActiveSnapPoint={setSnap}
+        fadeFromIndex={0}
+      >
+        <Drawer.Portal>
+          <Drawer.Overlay 
+            className={`fixed inset-0 z-[60] lg:hidden transition-all duration-500 ease-in-out ${
+              snap === 0.55 ? 'bg-black/25 backdrop-blur-[1px]' : 'bg-black/60 backdrop-blur-sm'
+            }`} 
+          />
+          <Drawer.Content className="fixed border-t border-[var(--border)] bottom-0 left-0 right-0 h-[100dvh] bg-[var(--bg-surface)]/95 backdrop-blur-3xl z-[60] rounded-t-[32px] flex flex-col focus:outline-none lg:hidden shadow-[0_-10px_40px_rgba(0,0,0,0.5)] pb-[env(safe-area-inset-bottom)]">
+            <Drawer.Handle className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-white/20 my-4" />
+            <div className="flex-1 overflow-y-auto custom-scrollbar px-2">
+              <MeaningPanel
+                card={displayCard}
+                onClose={() => setIsMobilePanelOpen(false)}
+              />
+            </div>
+          </Drawer.Content>
+        </Drawer.Portal>
+      </Drawer.Root>
     </div>
   );
 }

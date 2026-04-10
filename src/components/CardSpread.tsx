@@ -2,6 +2,19 @@ import Card from './Card';
 import { motion } from 'framer-motion';
 import { TarotCardData, SpreadConfig } from '../types';
 
+const CELTIC_CROSS_TRANSFORMS = [
+  { x: '-80%', y: '0%', r: 0, z: 10 },        // 1. Core
+  { x: '-80%', y: '0%', r: -90, z: 11 },      // 2. Obstacle (Crosses 1)
+  { x: '-80%', y: '135%', r: 0, z: 10 },      // 3. Subconscious
+  { x: '-220%', y: '0%', r: 0, z: 10 },       // 4. Past
+  { x: '-80%', y: '-135%', r: 0, z: 10 },     // 5. Conscious
+  { x: '60%', y: '0%', r: 0, z: 10 },         // 6. Future
+  { x: '220%', y: '195%', r: 0, z: 10 },      // 7. Self
+  { x: '220%', y: '65%', r: 0, z: 10 },       // 8. Environment
+  { x: '220%', y: '-65%', r: 0, z: 10 },      // 9. Hopes/Fears
+  { x: '220%', y: '-195%', r: 0, z: 10 }      // 10. Outcome
+] as const;
+
 export interface CardSpreadProps {
   drawn: TarotCardData[];
   onSelectCard: (card: TarotCardData) => void;
@@ -66,27 +79,11 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
   };
 
   const renderCelticCross = () => {
-    // Relative coordinates based on a central pivot
-    // x, y are percentages of card size
-    // r is rotation, z is z-index
-    const transforms = [
-      { x: '-80%', y: '0%', r: 0, z: 10 },        // 1. Core
-      { x: '-80%', y: '0%', r: -90, z: 11 },      // 2. Obstacle (Crosses 1)
-      { x: '-80%', y: '135%', r: 0, z: 10 },      // 3. Subconscious
-      { x: '-220%', y: '0%', r: 0, z: 10 },       // 4. Past
-      { x: '-80%', y: '-135%', r: 0, z: 10 },     // 5. Conscious
-      { x: '60%', y: '0%', r: 0, z: 10 },         // 6. Future
-      { x: '220%', y: '195%', r: 0, z: 10 },      // 7. Self
-      { x: '220%', y: '65%', r: 0, z: 10 },       // 8. Environment
-      { x: '220%', y: '-65%', r: 0, z: 10 },      // 9. Hopes/Fears
-      { x: '220%', y: '-195%', r: 0, z: 10 }      // 10. Outcome
-    ];
-
     return (
       <div className="relative w-full h-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px]">
         {Array.from({ length: 10 }).map((_, i) => {
           const card = drawn[i];
-          const t = transforms[i];
+          const t = CELTIC_CROSS_TRANSFORMS[i];
 
           const slotContent = card ? (
             <motion.div
@@ -122,12 +119,12 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
               }}
             >
               {t.r === 0 && (
-                 <div className="absolute -top-6 md:-top-8 whitespace-nowrap label-small text-[9px] sm:text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium">
+                 <div className="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 whitespace-nowrap label-small text-[9px] sm:text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium text-center min-w-max px-1">
                    {spreadConfig.positions[i] || `Position ${i+1}`}
                  </div>
               )}
               {t.r === -90 && (
-                 <div className="absolute -left-10 sm:-left-12 rotate-90 whitespace-nowrap label-small text-[9px] sm:text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium top-1/2">
+                 <div className="absolute -left-12 rotate-90 whitespace-nowrap label-small text-[9px] sm:text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium top-1/2 -translate-y-1/2 -translate-x-1/2 min-w-max">
                    {spreadConfig.positions[i]}
                  </div>
               )}

@@ -19,7 +19,6 @@ export default function MeaningPanel({ card, onClose }: MeaningPanelProps) {
 
   return (
     <div className="relative p-6 pt-10 md:p-12 lg:px-14 min-h-full">
-      {/* Mobile Close Button */}
       {onClose && (
         <button 
           onClick={onClose}
@@ -30,8 +29,7 @@ export default function MeaningPanel({ card, onClose }: MeaningPanelProps) {
           </svg>
         </button>
       )}
-      {/* Background Watermark */}
-      <div 
+      <div
         className="absolute top-10 right-10 text-[10rem] font-light-title pointer-events-none select-none overflow-hidden"
         style={{ 
           color: 'var(--text-muted)', 
