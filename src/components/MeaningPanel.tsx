@@ -8,7 +8,7 @@ export interface MeaningPanelProps {
 export default function MeaningPanel({ card }: MeaningPanelProps) {
   if (!card) {
     return (
-      <div className="h-full flex items-center justify-center text-level-muted font-light-title p-10 text-center">
+      <div className="h-full flex items-center justify-center text-level-secondary font-light-title p-10 text-center text-lg lg:text-xl tracking-wide leading-relaxed">
         当命运的轮盘转动<br/>在此处解读它的指引
       </div>
     );

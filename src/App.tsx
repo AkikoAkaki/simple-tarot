@@ -31,21 +31,21 @@ function App() {
     <div className="h-screen w-full flex flex-col lg:flex-row overflow-hidden relative">
       {/* Floating Header */}
       <header className="absolute top-0 left-0 w-full lg:w-[65%] p-6 md:px-10 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-none">
-        <h1 className="text-2xl font-light-title text-level-primary tracking-widest uppercase pointer-events-auto">
+        <h1 className="text-2xl md:text-3xl font-light-title font-medium text-[var(--text-primary)] tracking-[0.2em] uppercase pointer-events-auto">
           TAROT
         </h1>
         
-        <div className="flex items-center gap-4 pointer-events-auto bg-[var(--bg-surface)]/80 px-4 py-2 rounded-full border border-[var(--border)]" style={{ backdropFilter: 'blur(8px)' }}>
-          <span className="label-small text-level-muted hidden md:inline">牌阵</span>
-          <div className="flex gap-1">
+        <div className="flex items-center gap-4 pointer-events-auto bg-[var(--bg-surface)]/90 px-5 py-2.5 rounded-full border border-[var(--border)]" style={{ backdropFilter: 'blur(12px)' }}>
+          <span className="label-small text-[var(--text-secondary)] hidden md:inline">牌阵</span>
+          <div className="flex gap-2">
             {Object.entries(spreads).map(([key, config]) => (
               <button
                 key={key}
                 onClick={() => handleChangeSpread(key)}
-                className={`px-3 py-1 text-sm rounded-full transition-colors duration-300 ${
+                className={`px-4 py-1.5 text-base rounded-full transition-colors duration-300 ${
                   spread.name === config.name 
-                    ? 'bg-[var(--bg-elevated)] text-[var(--accent)] border-none' 
-                    : 'text-level-secondary hover:text-level-primary'
+                    ? 'bg-[var(--bg-elevated)] text-[var(--accent)] border-none font-medium shadow-sm' 
+                    : 'text-[var(--text-secondary)] hover:text-level-primary'
                 }`}
               >
                 {config.name}

@@ -34,22 +34,22 @@ export default function ShuffleDeck({ onShuffle, onDraw, remainingCount }: Shuff
           )}
         </motion.div>
         
-        <div className="absolute -bottom-8 left-0 right-0 text-center text-level-secondary label-small">
+        <div className="absolute -bottom-8 left-0 right-0 text-center text-[var(--text-secondary)] font-medium tracking-wide">
           剩余 {remainingCount} 张
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 mt-4">
+      <div className="flex flex-col gap-3 mt-4 w-full">
         <button 
           onClick={onDraw}
           disabled={remainingCount === 0}
-          className="px-6 py-2 border border-[var(--border)] text-level-primary text-sm hover:border-[var(--border-hover)] hover:bg-[rgba(255,255,255,0.02)] transition-colors duration-300 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-6 py-2.5 border border-[var(--border-hover)] text-[var(--text-primary)] text-base font-medium shadow-sm hover:border-[var(--accent)] hover:bg-[rgba(255,255,255,0.05)] transition-all duration-300 rounded disabled:opacity-30 disabled:cursor-not-allowed"
         >
           抽牌
         </button>
         <button 
           onClick={onShuffle}
-          className="px-6 py-2 text-level-secondary text-sm hover:text-level-primary transition-colors duration-300 rounded"
+          className="w-full px-6 py-2 text-[var(--text-secondary)] text-sm hover:text-[var(--text-primary)] hover:bg-[rgba(255,255,255,0.03)] transition-colors duration-300 rounded"
         >
           重新洗牌
         </button>

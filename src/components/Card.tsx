@@ -25,6 +25,15 @@ export default function Card({ card, isReversed = false, isFlipped: initialFlipp
     ([currX, currY]) => `radial-gradient(circle at ${Number(currX) * 100}% ${Number(currY) * 100}%, rgba(255, 255, 255, 0.15) 0%, transparent 70%)`
   );
 
+  const backgroundRadialFront = useTransform(
+    [mouseXSpring, mouseYSpring],
+    ([currX, currY]) => {
+      const calcX = isReversed ? 1 - Number(currX) : Number(currX);
+      const calcY = isReversed ? 1 - Number(currY) : Number(currY);
+      return `radial-gradient(circle at ${calcX * 100}% ${calcY * 100}%, rgba(255, 255, 255, 0.15) 0%, transparent 70%)`;
+    }
+  );
+
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
@@ -56,7 +65,7 @@ export default function Card({ card, isReversed = false, isFlipped: initialFlipp
       className="card-container relative cursor-pointer"
       style={{ 
         width: '100%',
-        height: '100%',
+        aspectRatio: '1 / 1.727',
         perspective: '1200px' 
       }}
       onClick={handleClick}
@@ -106,7 +115,7 @@ export default function Card({ card, isReversed = false, isFlipped: initialFlipp
           {/* Glare Layer */}
           <motion.div 
             className="absolute inset-0 pointer-events-none z-20 mix-blend-screen"
-            style={{ background: backgroundRadial }}
+            style={{ background: backgroundRadialFront }}
           />
 
           <div className="text-level-muted label-small mb-2 z-10">

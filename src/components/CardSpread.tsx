@@ -29,7 +29,7 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
                 className={`flex flex-col items-center gap-4 ${isSingle ? 'z-10' : ''}`}
                 style={{ transformOrigin: 'center' }}
               >
-                <div className="label-small text-level-secondary text-center font-medium tracking-wide">
+                <div className="label-small text-[var(--text-secondary)] text-center font-medium tracking-wide">
                   {card.positionName || spreadConfig.positions[i]}
                 </div>
                 <div style={{ width: 'clamp(110px, 14vw, 180px)' }}>
@@ -45,7 +45,7 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
           } else {
             return (
               <div key={`empty-${i}`} className={`flex flex-col items-center gap-4 opacity-30 mt-6 ${isSingle ? 'scale-125 transform-origin-center' : ''}`}>
-                <div className="label-small text-level-muted tracking-wide text-center">
+                <div className="label-small text-[var(--text-secondary)] opacity-80 tracking-wide text-center">
                   {spreadConfig.positions[i]}
                 </div>
                 <div 
@@ -55,7 +55,7 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
                     width: 'clamp(110px, 14vw, 180px)',
                   }}
                 >
-                  <div className="text-[var(--border)] label-small">{i + 1}</div>
+                  <div className="text-[var(--text-muted)] opacity-60 text-lg font-medium">{i + 1}</div>
                 </div>
               </div>
             );
@@ -70,16 +70,16 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
     // x, y are percentages of card size
     // r is rotation, z is z-index
     const transforms = [
-      { x: '-50%', y: '0%', r: 0, z: 10 },        // 1. Core
-      { x: '-50%', y: '0%', r: -90, z: 11 },      // 2. Obstacle (Crosses 1)
-      { x: '-50%', y: '120%', r: 0, z: 10 },      // 3. Subconscious
-      { x: '-165%', y: '0%', r: 0, z: 10 },       // 4. Past
-      { x: '-50%', y: '-120%', r: 0, z: 10 },     // 5. Conscious
-      { x: '65%', y: '0%', r: 0, z: 10 },         // 6. Future
-      { x: '210%', y: '160%', r: 0, z: 10 },      // 7. Self
-      { x: '210%', y: '50%', r: 0, z: 10 },       // 8. Environment
-      { x: '210%', y: '-60%', r: 0, z: 10 },      // 9. Hopes/Fears
-      { x: '210%', y: '-170%', r: 0, z: 10 }      // 10. Outcome
+      { x: '-80%', y: '0%', r: 0, z: 10 },        // 1. Core
+      { x: '-80%', y: '0%', r: -90, z: 11 },      // 2. Obstacle (Crosses 1)
+      { x: '-80%', y: '135%', r: 0, z: 10 },      // 3. Subconscious
+      { x: '-220%', y: '0%', r: 0, z: 10 },       // 4. Past
+      { x: '-80%', y: '-135%', r: 0, z: 10 },     // 5. Conscious
+      { x: '60%', y: '0%', r: 0, z: 10 },         // 6. Future
+      { x: '220%', y: '195%', r: 0, z: 10 },      // 7. Self
+      { x: '220%', y: '65%', r: 0, z: 10 },       // 8. Environment
+      { x: '220%', y: '-65%', r: 0, z: 10 },      // 9. Hopes/Fears
+      { x: '220%', y: '-195%', r: 0, z: 10 }      // 10. Outcome
     ];
 
     return (
@@ -106,7 +106,7 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
             <div 
                className="w-full h-full border border-dashed border-[var(--border)] rounded flex items-center justify-center opacity-20"
             >
-               <div className="text-[var(--border)] label-small">{i + 1}</div>
+               <div className="text-[var(--text-muted)] opacity-60 text-base font-medium">{i + 1}</div>
             </div>
           );
 
@@ -117,17 +117,17 @@ export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSp
               style={{
                 transform: `translate(calc(-50% + ${t.x}), calc(-50% + ${t.y})) rotate(${t.r}deg)`,
                 zIndex: t.z,
-                width: 'clamp(65px, 8.5vw, 110px)',
+                width: 'clamp(75px, 10vw, 135px)',
                 aspectRatio: '1 / 1.727'
               }}
             >
               {t.r === 0 && (
-                 <div className="absolute -top-5 whitespace-nowrap label-small text-[9px] text-level-muted opacity-40 uppercase tracking-widest">
+                 <div className="absolute -top-7 md:-top-8 whitespace-nowrap label-small text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium">
                    {spreadConfig.positions[i] || `Position ${i+1}`}
                  </div>
               )}
               {t.r === -90 && (
-                 <div className="absolute -left-12 rotate-90 whitespace-nowrap label-small text-[9px] text-level-muted opacity-40 uppercase tracking-widest top-1/2">
+                 <div className="absolute -left-12 rotate-90 whitespace-nowrap label-small text-[10px] md:text-[11px] text-[var(--text-secondary)] opacity-80 uppercase tracking-widest font-medium top-1/2">
                    {spreadConfig.positions[i]}
                  </div>
               )}
