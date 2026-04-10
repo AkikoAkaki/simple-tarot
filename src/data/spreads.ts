@@ -1,4 +1,6 @@
-export const spreads = {
+import { SpreadConfig } from '../types';
+
+export const spreads: Record<string, SpreadConfig> = {
   single: {
     name: "单牌",
     count: 1,

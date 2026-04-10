@@ -1,8 +1,14 @@
-import React from 'react';
 import Card from './Card';
 import { motion } from 'framer-motion';
+import { TarotCardData, SpreadConfig } from '../types';
 
-export default function CardSpread({ drawn, onSelectCard, spreadConfig }) {
+export interface CardSpreadProps {
+  drawn: TarotCardData[];
+  onSelectCard: (card: TarotCardData) => void;
+  spreadConfig: SpreadConfig;
+}
+
+export default function CardSpread({ drawn, onSelectCard, spreadConfig }: CardSpreadProps) {
   return (
     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 w-full p-4">
       {drawn.map((card, index) => (

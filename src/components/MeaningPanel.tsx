@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
+import { TarotCardData } from '../types';
 
-export default function MeaningPanel({ card }) {
+export interface MeaningPanelProps {
+  card: TarotCardData | null;
+}
+
+export default function MeaningPanel({ card }: MeaningPanelProps) {
   if (!card) {
     return (
       <div className="flex-1 flex items-center justify-center text-level-muted font-light-title">

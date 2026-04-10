@@ -1,19 +1,29 @@
-const fs = require('fs');
+import fs from 'fs';
 
-const majorArcanaNames = [
+const majorArcanaNames: string[] = [
   "愚者", "魔术师", "女祭司", "女皇", "皇帝", "教皇", "恋人", "战车",
   "力量", "隐士", "命运之轮", "正义", "倒吊人", "死神", "节制", "恶魔",
   "高塔", "星星", "月亮", "太阳", "审判", "世界"
 ];
 
-const suits = [
+interface Suit {
+  name: string;
+  element: string;
+}
+
+const suits: Suit[] = [
   { name: "权杖", element: "火" },
   { name: "圣杯", element: "水" },
   { name: "宝剑", element: "风" },
   { name: "星币", element: "土" }
 ];
 
-const minorNumbers = [
+interface MinorNumber {
+  name: string;
+  number: number;
+}
+
+const minorNumbers: MinorNumber[] = [
   { name: "王牌", number: 1 },
   { name: "二", number: 2 },
   { name: "三", number: 3 },
@@ -30,24 +40,36 @@ const minorNumbers = [
   { name: "国王", number: 14 }
 ];
 
-const toRoman = (num) => {
+const toRoman = (num: number): string => {
   if (num === 0) return "0";
-  const roman = {
+  const roman: Record<string, number> = {
     M: 1000, CM: 900, D: 500, CD: 400,
     C: 100, XC: 90, L: 50, XL: 40,
     X: 10, IX: 9, V: 5, IV: 4, I: 1
   };
   let str = '';
-  for (let i of Object.keys(roman)) {
-    let q = Math.floor(num / roman[i]);
+  for (const i of Object.keys(roman)) {
+    const q = Math.floor(num / roman[i]);
     num -= q * roman[i];
     str += i.repeat(q);
   }
   return str;
 };
 
-const cards = [];
-let idCounter = 1;
+interface Card {
+  id: string;
+  name: string;
+  arcana: string;
+  number: number;
+  roman: string;
+  suit: string | null;
+  element: string;
+  keywords: string[];
+  upright: string;
+  reversed: string;
+}
+
+const cards: Card[] = [];
 
 // Major Arcana
 for (let i = 0; i < majorArcanaNames.length; i++) {
@@ -66,8 +88,8 @@ for (let i = 0; i < majorArcanaNames.length; i++) {
 }
 
 // Minor Arcana
-for (let suit of suits) {
-  for (let n of minorNumbers) {
+for (const suit of suits) {
+  for (const n of minorNumbers) {
     cards.push({
       id: `minor_${suit.name}_${n.number}`,
       name: `${suit.name}${n.name}`,
@@ -84,9 +106,9 @@ for (let suit of suits) {
 }
 
 // Just to give them varied random keywords for realism since I don't have the 78 exact definitions on hand
-const getRandomKeywords = () => {
+const getRandomKeywords = (): string[] => {
     const kw = ["创造", "直觉", "丰收", "秩序", "智慧", "结合", "胜利", "耐心", "内省", "转折", "公正", "牺牲", "转变", "和谐", "束缚", "突变", "希望", "不安", "成功", "重生", "完满", "热情", "行动", "阻碍", "爱", "悲痛", "财富", "稳定"];
-    const out = [];
+    const out: string[] = [];
     for(let i=0; i<3; i++){
         out.push(kw[Math.floor(Math.random() * kw.length)]);
     }

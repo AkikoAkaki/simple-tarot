@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { TarotCardData } from '../types';
 
-export default function Card({ card, isReversed = false, isFlipped: initialFlipped = false, onClick }) {
+export interface CardProps {
+  card: TarotCardData;
+  isReversed?: boolean;
+  isFlipped?: boolean;
+  onClick?: (card: TarotCardData) => void;
+}
+
+export default function Card({ card, isReversed = false, isFlipped: initialFlipped = false, onClick }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(initialFlipped);
 
   const handleClick = () => {
@@ -13,7 +21,7 @@ export default function Card({ card, isReversed = false, isFlipped: initialFlipp
 
   const transitionConfig = {
     duration: 0.4,
-    ease: [0.16, 1, 0.3, 1] // Expo Out
+    ease: [0.16, 1, 0.3, 1] as const // Expo Out
   };
 
   return (

@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 
-export default function ShuffleDeck({ onShuffle, onDraw, remainingCount }) {
+export interface ShuffleDeckProps {
+  onShuffle: () => void;
+  onDraw: () => void;
+  remainingCount: number;
+}
+
+export default function ShuffleDeck({ onShuffle, onDraw, remainingCount }: ShuffleDeckProps) {
   return (
     <div className="flex flex-col items-center gap-8">
       <div 

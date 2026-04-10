@@ -4,10 +4,11 @@ import ShuffleDeck from './components/ShuffleDeck';
 import CardSpread from './components/CardSpread';
 import MeaningPanel from './components/MeaningPanel';
 import { spreads } from './data/spreads';
+import { TarotCardData } from './types';
 
 function App() {
   const { deck, drawn, spread, shuffleDeck, drawCard, changeSpread } = useDeck();
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCard, setSelectedCard] = useState<TarotCardData | null>(null);
 
   // Initialize deck on mount
   useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
     }
   };
 
-  const handleChangeSpread = (key) => {
+  const handleChangeSpread = (key: string) => {
     changeSpread(key);
     setSelectedCard(null);
   };
