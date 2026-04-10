@@ -2,29 +2,29 @@
   <rect width="100" height="100" rx="22" fill="#111113" />
   
   <g fill="#ffffff">
-    <!-- Thicker top traverse bar (Height: 6) -->
-    <rect x="22" y="12" width="56" height="6" />
+    <!-- Thicker top traverse bar (Height: 10) -->
+    <rect x="22" y="12" width="56" height="10" />
     
-    <!-- Top left hanging serif (Width: 4) -->
-    <rect x="22" y="12" width="4" height="16" />
+    <!-- Top left hanging serif (Width: 4, Adjusted Height: 18) -->
+    <rect x="22" y="12" width="4" height="18" />
     <!-- Perfectly rounded cubic bezier inner bracket adjusting to thicker bar -->
-    <path d="M 26 28 C 26 23, 35 18, 45 18 L 26 18 Z" />
+    <path d="M 26 30 C 26 26, 35 22, 45 22 L 26 22 Z" />
     
-    <!-- Top right hanging serif (Width: 4) -->
-    <rect x="74" y="12" width="4" height="16" />
+    <!-- Top right hanging serif (Width: 4, Adjusted Height: 18) -->
+    <rect x="74" y="12" width="4" height="18" />
     <!-- Perfectly rounded cubic bezier inner bracket adjusting to thicker bar -->
-    <path d="M 74 28 C 74 23, 65 18, 55 18 L 74 18 Z" />
+    <path d="M 74 30 C 74 26, 65 22, 55 22 L 74 22 Z" />
     
     <!-- Main stem (Width: 10, Height bounds: 14 to 84) -->
     <rect x="45" y="14" width="10" height="70" />
     
-    <!-- Bottom base anchoring (Height: 4) -->
-    <rect x="28" y="80" width="44" height="4" />
+    <!-- Bottom base anchoring (Width: 32, Height: 4) -->
+    <rect x="34" y="80" width="32" height="4" />
     
     <!-- Elegantly rounded bottom left fillet -->
-    <path d="M 28 80 C 36 80, 45 72, 45 64 L 45 80 Z" />
+    <path d="M 34 80 C 39.5 80, 45 72, 45 64 L 45 80 Z" />
     
     <!-- Elegantly rounded bottom right fillet -->
-    <path d="M 72 80 C 64 80, 55 72, 55 64 L 55 80 Z" />
+    <path d="M 66 80 C 60.5 80, 55 72, 55 64 L 55 80 Z" />
   </g>
 </svg>
