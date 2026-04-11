@@ -118,10 +118,10 @@ export default function Card({ card, isReversed = false, isFlipped: initialFlipp
             style={{ background: backgroundRadialFront }}
           />
 
-          <div className="text-level-muted label-small mb-2 z-10">
+          <div className="text-level-muted text-[10px] md:text-xs mb-1 z-10 tracking-widest opacity-60">
             {card.roman}
           </div>
-          <div className="text-level-primary font-light-title text-lg md:text-xl xl:text-3xl mb-1 z-10 whitespace-nowrap">
+          <div className="text-level-primary font-light-title text-sm sm:text-base md:text-lg lg:text-xl mb-1 z-10 whitespace-nowrap px-1">
             {card.name}
           </div>
           {card.element && (

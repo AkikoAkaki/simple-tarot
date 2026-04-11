@@ -109,11 +109,10 @@ function App() {
            />
          </div>
 
-         {/* Mobile Centered Action Bar with Swipe */}
          <motion.div 
-           className="lg:hidden fixed bottom-[max(2rem,calc(env(safe-area-inset-bottom)+0.5rem))] left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-[400px] touch-none"
+           className="lg:hidden fixed bottom-[max(1.5rem,calc(env(safe-area-inset-bottom)+0.5rem))] left-1/2 -translate-x-1/2 z-40 w-max max-w-[90%] touch-none"
            initial={false}
-           whileTap={{ scale: 0.98 }}
+           whileTap={{ scale: 0.96 }}
            drag="x"
            dragConstraints={{ left: 0, right: 0 }}
            dragElastic={0.1}
@@ -123,38 +122,42 @@ function App() {
              if (info.offset.x > threshold) handlePrevSpread();
            }}
          >
-           <div className="bg-[var(--bg-surface)]/80 backdrop-blur-xl border border-[var(--border)] rounded-2xl p-4 shadow-2xl flex flex-col items-center gap-3">
-             <div className="flex items-center justify-between w-full">
-               <button
-                 onClick={handleShuffle}
-                 className="px-4 py-2 text-sm text-[var(--text-secondary)] hover:text-white transition-colors pointer-events-auto"
-               >
-                 重新洗牌
-               </button>
-               <div className="flex flex-col items-end">
-                 <span className="text-[10px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase mb-1">{spread.name}</span>
-                 <span className="text-[10px] font-medium tracking-widest text-[var(--text-muted)] uppercase">
-                   剩余 {deck.length} 张
-                 </span>
-               </div>
-             </div>
+           <div className="bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-full px-6 py-2.5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center gap-5">
+             {/* Dynamic Shuffle */}
+             <button
+               onClick={handleShuffle}
+               className="text-[11px] font-medium text-[var(--text-secondary)] hover:text-white transition-colors py-1 pointer-events-auto"
+             >
+               洗牌
+             </button>
+
+             {/* Minimal Divider */}
+             <div className="w-[1px] h-4 bg-white/10" />
+
+             {/* Primary Draw Action */}
              <button 
                onClick={handleDrawCard}
                disabled={deck.length === 0}
-               className="w-full py-4 bg-[var(--accent)] text-black font-semibold rounded-xl active:scale-95 transition-transform disabled:opacity-30 flex items-center justify-center gap-2 pointer-events-auto"
+               className="flex flex-col items-center group pointer-events-auto active:opacity-60 transition-opacity px-2"
              >
-               <span className="text-lg">抽牌</span>
-               <span className="opacity-40 font-normal">Draw</span>
+               <span className="text-[13px] font-semibold text-[var(--accent)] tracking-wider">抽牌</span>
+               <span className="text-[7px] text-[var(--text-muted)] tracking-[0.2em] font-bold -mt-0.5">DRAW</span>
              </button>
-             
-             {/* Swipe Indicator Dots */}
-             <div className="flex gap-1.5 mt-1">
-                {spreadKeys.map((_, i) => (
-                  <div 
-                    key={i} 
-                    className={`h-1 rounded-full transition-all duration-300 ${i === currentSpreadIndex ? 'w-4 bg-[var(--accent)]' : 'w-1 bg-white/10'}`} 
-                  />
-                ))}
+
+             {/* Minimal Divider */}
+             <div className="w-[1px] h-4 bg-white/10" />
+
+             {/* Deck Info & Indicator */}
+             <div className="flex flex-col items-center gap-1">
+                <span className="text-[10px] font-bold text-[var(--text-muted)] font-mono leading-none">{deck.length}</span>
+                <div className="flex gap-1">
+                    {spreadKeys.map((_, i) => (
+                      <div 
+                        key={i} 
+                        className={`h-0.5 rounded-full transition-all duration-300 ${i === currentSpreadIndex ? 'w-2.5 bg-[var(--accent)]' : 'w-0.5 bg-white/10'}`} 
+                      />
+                    ))}
+                </div>
              </div>
            </div>
          </motion.div>
